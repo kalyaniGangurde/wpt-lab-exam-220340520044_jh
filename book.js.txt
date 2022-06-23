@@ -1,0 +1,33 @@
+const url ="";
+let dbparams=
+{
+     host: 'localhost',
+    user: 'kall',
+    password: 'welcome123',
+    database: 'book',
+	port:3306
+};
+
+const mysql = require('mysql2');
+const { append } = require('vary');
+const connection = mysql.createConnection(dbparams);
+let bookid= 24;
+let bookname ='html';
+let price =520;
+connection.query('insert into book(bookid ,bookname ,price)values(?,?,?,?)',
+[bookid ,bookname ,price],
+(err,rest1)=>{
+    if (err) {
+        result = err;
+        console.log("trouble " + err);
+    } else {
+        result = res1;
+        console.log("success" + result)
+    }
+    
+   
+});
+
+app.listen(90,function()){
+    console.log("server listening at 90 port ");
+};
